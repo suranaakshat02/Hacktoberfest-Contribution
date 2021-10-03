@@ -10,10 +10,10 @@ def insertNode(root,val):
   else:
     if root.val == val:
       return root
-    elif root.val < val:
-      root.left = insertNode(root.left,val)
-    else:
+    elif val > root.val:
       root.right = insertNode(root.right,val)
+    else:
+      root.left = insertNode(root.left,val)
   return root
 
 def PrintinOrder(root):
