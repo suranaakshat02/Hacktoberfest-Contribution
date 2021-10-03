@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Random Quotes</title>
+</head>
+
+<body style="background-color: #3b4e6d ;">
+    <div class="container ">
+        <div class="row d-flex justify-content-center mt-5 ">
+            <div class="card text-center col-md-4 bg-dark text-white">
+                <h2 class=" my-3">Random Quotes</h2>
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Click on button to generate a random quote</h5>
+                    <footer class="blockquote-footer my-2"><cite title="Source Title" class="back"></cite>
+                    </footer>
+                    <a href="#" class="btn btn-primary my-2">Search here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script>
+        const link = document.querySelector("a")
+        const quotePlace = document.querySelector(".card-title")
+        const backQuote = document.querySelector(".back")
+        link.addEventListener("click", (e) => {
+            e.preventDefault()
+            fetch("https://api.quotable.io/random")
+                .then(res => res.json())
+                .then(data => {
+                    quotePlace.innerHTML = data.content
+                    backQuote.innerHTML = data.author
+                })
+        })
+    </script>
+
+</body>
+
+</html>
