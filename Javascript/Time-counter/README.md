@@ -6,7 +6,7 @@
     You can able to share the link of the event.
 
 
-**You can share **
+**You can share**
     - Important dates with your friends and family.
     - your birthday with your friends and family.
     - your anniversary with your friends and family.
